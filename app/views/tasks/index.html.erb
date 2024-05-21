@@ -1,0 +1,13 @@
+<h1>All tasks</h1>
+
+<div class="container">
+  <%= link_to "Create a new task", new_task_path %>
+  <div class="d-flex flex-column">
+    <% @tasks.each do |task| %>
+    <div>
+      <input type="checkbox" <%= 'checked' if task.completed %> />
+      <label><%= link_to task.title, task_path(task) %></label>
+    </div>
+    <% end %>
+  </div>
+</div>
